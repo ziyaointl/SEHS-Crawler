@@ -5,7 +5,7 @@
 import urllib.request
 import re
 
-base = "http://www.sdshiyan.cn/english/news/default"  # Base for the catalog url
+base = "http://www.sdshiyan.cn/english/student/default"  # Base for the catalog url
 p = "p"
 tail = ".htm"
 catalog = [base + tail]  # A list of urls for the catalog pages
@@ -16,7 +16,7 @@ pattern = re.compile(r'<div class="title">.*</div>')
 hrefPattern = re.compile('href="(.+?)"')
 
 # Completes the rest of the catalog url list
-for x in range(2, 13):
+for x in range(2, 4):
     catalog.append(base + p + str(x) + tail)
 
 # Crawls all the catalog pages in "catalog" and stores them into catalogData
@@ -26,7 +26,7 @@ for url in catalog:
     catalogData.append(pattern.findall(data))
 
 # Opens the output file
-outputFile = open("newsURL.txt", "w+")
+outputFile = open("studentURL.txt", "w+")
 
 # Finds all the href properties
 urlList = hrefPattern.findall(str(catalogData))
