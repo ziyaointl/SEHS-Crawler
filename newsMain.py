@@ -36,7 +36,7 @@ for link in urlList:
         br.unwrap()
 
     imgBaseURL = "http://www.sdshiyan.cn/english/upload/"
-    imgUploadedBase = "http://localhost:8888/wp-content/uploads/2016/12/"
+    imgUploadedBase = "http://intl.sehs.science/wp-content/uploads/2017/07/"
     imgPattern = re.compile('src="../../upload/(.+?)"')
     emptyPattern = re.compile('\S+?')
     imgList = []
@@ -56,5 +56,5 @@ for link in urlList:
     for url in imgList:
         outputFile.write(imgBaseURL + url + ";")
     if len(imgList) == 0:
-        outputFile.write("http://localhost:8888/wp-content/uploads/2016/12/placeholder_600x400.png" + ";")
+        outputFile.write("http://intl.sehs.science/wp-content/uploads/2016/12/placeholder_600x400.png" + ";")
     outputFile.write("\n")
